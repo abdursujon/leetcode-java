@@ -1,5 +1,6 @@
 public class ArrayManipulation{
 
+    // ================== 8 easy =================
     /** LeetCode 35. Search Insert Position
      * Find the suitable index for target in sorted array.
      * Example: nums = { 1, 3, 5, 7} and target = 9, target position will be 4 (0 index) since 9 is the largest
@@ -163,6 +164,16 @@ public class ArrayManipulation{
             return list.get(2);
         }
     }
+
+    // ================== 8 medium =================
+    // 1.
+    // 2.
+    // 3.
+    // 4.
+    // 5.
+    // 6.
+    // 7.
+    // 8.
 
     public static void main(String [] args){
 
