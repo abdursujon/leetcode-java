@@ -464,10 +464,133 @@ public class ArrayManipulation {
     }
 
 
-    // 4.
+    /**
+     * Problem 4
+     * LeetCode 33: Search in Rotated Sorted Array
+     * There is an integer array nums sorted in ascending order (with distinct values).
+     *
+     * Prior to being passed to your function, nums is possibly left rotated at an unknown index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be left rotated by 3 indices and become [4,5,6,7,0,1,2].
+     *
+     * Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+     *
+     * You must write an algorithm with O(log n) runtime complexity.
+     *
+     * Example 1:
+     *
+     * Input: nums = [4,5,6,7,0,1,2], target = 0
+     * Output: 4
+     * Example 2:
+     *
+     * Input: nums = [4,5,6,7,0,1,2], target = 3
+     * Output: -1
+     * Example 3:
+     *
+     * Input: nums = [1], target = 0
+     * Output: -1
+     */
+    public int search(int[] nums, int target) {
+        // {4, 5, 6, 7, 0, 1, 2}
+        int left = 0;
+        int right = nums.length - 1;
+        while(left <= right){
+            int mid = (left + right) / 2;
+
+            // if target is mid return mid index
+            if(nums[mid] == target) return mid;
+
+            // left halft is sorted
+            if(nums[left] <= nums[mid]){
+                // here we check if nums[left] is less or equal to target and if target itself is less than mid
+                // for example {4, 5, 6, 7, 0, 1, 2} here mid is 7, so if the target is 4 that means 4 < 7
+                // since we know target is in left half of the array we discard right half
+                if(nums[left] <= target && target < nums[mid]){
+                    // mid is > target move to left
+                    right = mid - 1;
+                } else{
+                    // mid is too small, move to right
+                    left = mid + 1;
+                }
+            }
+
+            // right half is sorted
+            else{
+                // if we have array such as {0, 1, 2, 4, 5, 6, 7} here if target is 6, our mid is 4 < target (6)
+                // we move left + 1 until we find the mid which is equal to target
+                if(nums[mid] < target && target <= nums[right]){
+                    // mid is too small move to the right for larger item
+                    left = mid + 1;
+                } else{
+                    // mid is too large move to left for small item
+                    right = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
 
 
-    // 5.
+
+    /**
+     * Problem 5
+     * LeetCode 34: Find First and Last Position of Element in Sorted Array
+     * Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+     *
+     * If target is not found in the array, return [-1, -1].
+     *
+     * You must write an algorithm with O(log n) runtime complexity.
+     *
+     * Example 1:
+     *
+     * Input: nums = [5,7,7,8,8,10], target = 8
+     * Output: [3,4]
+     * Example 2:
+     *
+     * Input: nums = [5,7,7,8,8,10], target = 6
+     * Output: [-1,-1]
+     * Example 3:
+     *
+     * Input: nums = [], target = 0
+     * Output: [-1,-1]
+     */
+    public int binarySearch(int[] nums, int target, boolean isSearchingLeft){
+        int left = 0;
+        int right = nums.length - 1;
+        int index = -1;
+
+        while(left <= right){
+            // if our array is {1, 2, 3, 4, 4, 5, 6, 7} mid = 8 / 2 = 4
+            int mid = (left + right) / 2;
+
+            // if target is 2, mid(4) > target(2)
+            if(target < nums[mid]){
+                // target is on the left side of the mid, so point right to mid - 1 (in this example index 3)
+                right = mid - 1;
+            } else if(target > nums[mid]){ // target is > nums[mid] for example target(7) > mid(4)
+                left = mid + 1; // since we don't need to look to the left side of the mid, we do mid + 1
+            } else{
+                // if both target < nums[mid] and target > nums[mid] fails that means target is the mid element so index = mid
+                index = mid;
+
+                // when we're searching left right should be point to mid - 1 since right side of mid discared
+                if(isSearchingLeft){
+                    right = mid -1;
+                } else{
+                    // if not searching left, we are searching right so left should start from mid + 1
+                    left = mid + 1;
+                }
+            }
+        }
+        return index;
+    }
+
+    public int[] searchRange(int[] nums, int target){
+        int[] result = {-1, -1};
+        int left = binarySearch(nums, target, true);
+        int right = binarySearch(nums, target, false);
+        result[0] = left;
+        result[1] = right;
+        return result;
+    }
 
 
     // 6.
@@ -518,6 +641,13 @@ public class ArrayManipulation {
 
         // Problem 3: LeetCode 31: Next Permutation
         am.nextPermutation(new int[]{3, 2, 1});
+
+        // Problem 4: LeetCode 33: Search
+        System.out.println(am.search(new int[]{3, 4, 6, 7, 0, 1, 2}, 1));
+
+
+        // Problem 4: LeetCode 34: SearchRange
+        System.out.println(Arrays.toString(am.searchRange(new int[]{5,7,7,8,8,10}, 10)));
 
 
 
