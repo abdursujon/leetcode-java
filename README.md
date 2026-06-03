@@ -4,7 +4,7 @@ A practice repo for interview preparation and developing problem-solving skill i
 Each file isolates **one problem-solving pattern** so we can learn the patterns and techniques in a small scope.
 
 Suggested order of learning since each topic builds on the ones above it.
-
+>Note: You can click any topic below to view the code directly to refresh your memory before any interview.
 1. [ArrayManipulation](problem-patterns/ArrayManipulation.java)
 2. [StringManipulation](problem-patterns/StringManipulation.java)
 3. [TwoPointers](problem-patterns/TwoPointers.java)
