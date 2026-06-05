@@ -1,6 +1,6 @@
 1. ArrayManipulation = Days: [1, 2, 0, 0, 0]
 2. StringManipulation = Days: [0, 0, 0, 0, 0]
-3. TwoPointers = Days: [0, 0, 0, 0, 0]
+3. TwoPointers = Days: [1, 2, 0, 0, 0]
 4. SlidingWindow = Days: [0, 0, 0, 0, 0]
 5. HashMapAndHashSetManipulation = Days: [0, 0, 0, 0, 0]
 6. BinarySearch = Days: [0, 0, 0, 0, 0]
