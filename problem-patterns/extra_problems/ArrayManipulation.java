@@ -1,9 +1,10 @@
+package extra_problems;
+
 import java.util.*;
 
 public class ArrayManipulation {
 
     // ================== 7 easy leetcode =================
-
     /**
      * Problem 1
      * LeetCode 35: Search Insert Position
@@ -593,16 +594,6 @@ public class ArrayManipulation {
     }
 
 
-    // 6.
-
-
-    // 7.
-
-
-    // 8.
-
-    // ================== 2 hard =================
-
     public static void main(String[] args) {
 
         ArrayManipulation am = new ArrayManipulation();
@@ -631,7 +622,7 @@ public class ArrayManipulation {
         System.out.println(am.thirdMax(new int[]{1, 7, 11, 1, 1, 1, 90, 3, 4, 4, 5}));
 
 
-        // ================== 8 medium =================
+        // ================== 5 medium =================
 
         // Problem 1: LeetCode 15: 3Sum
         System.out.println(am.threeSum(new int[]{3, 2, 1, -1, -2}));
@@ -646,11 +637,7 @@ public class ArrayManipulation {
         System.out.println(am.search(new int[]{3, 4, 6, 7, 0, 1, 2}, 1));
 
 
-        // Problem 4: LeetCode 34: SearchRange
+        // Problem 5: LeetCode 34: SearchRange
         System.out.println(Arrays.toString(am.searchRange(new int[]{5,7,7,8,8,10}, 10)));
-
-
-
-        // ================== 2 hard =================
     }
 }

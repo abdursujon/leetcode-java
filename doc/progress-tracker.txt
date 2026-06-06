@@ -1,17 +1,39 @@
-1. ArrayManipulation = Days: [1, 2, 0, 0, 0]
-2. StringManipulation = Days: [0, 0, 0, 0, 0]
-3. TwoPointers = Days: [1, 2, 0, 0, 0]
-4. SlidingWindow = Days: [0, 0, 0, 0, 0]
-5. HashMapAndHashSetManipulation = Days: [0, 0, 0, 0, 0]
-6. BinarySearch = Days: [0, 0, 0, 0, 0]
-7. LinkedListManipulation = Days: [0, 0, 0, 0, 0]
-8. FastAndSlowPointers = Days: [0, 0, 0, 0, 0]
-9. SolveProblemsUsingStack = Days: [0, 0, 0, 0, 0]
-10. SolveProblemsUsingQueue = Days: [0, 0, 0, 0, 0]
-11. Recursion = Days: [0, 0, 0, 0, 0]
-12. MergeIntervals = Days: [0, 0, 0, 0, 0]
-13. TopKElement = Days: [0, 0, 0, 0, 0]
-14. BackTracking = Days: [0, 0, 0, 0, 0]
-15. DynamicProgramming = Days: [0, 0, 0, 0, 0]
-16. Greedy = Days: [0, 0, 0, 0, 0]
-17. MathProblems = Days: [0, 0, 0, 0, 0]
+## 3 PROBLEM A DAY 5 DAYS EACH TOPIC
+GROUP 1
+    1.  Build HashMap         = Days: [0, 0, 0, 0, 0]
+    2.  Build LinkedList      = Days: [0, 0, 0, 0, 0]
+    3.  Hashing               = Days: [0, 0, 0, 0, 0]
+
+GROUP 2 — Array & string core (highest interview frequency)
+    4.  two_pointers           = Days: [1, 2, 0, 0, 0]
+    5.  SlidingWindow         = Days: [0, 0, 0, 0, 0]
+    6.  PrefixSum             = Days: [0, 0, 0, 0, 0]
+    7.  binary_search          = Days: [0, 0, 0, 0, 0]
+
+GROUP 3 — Linked list
+    8.  FastAndSlowPointers   = Days: [0, 0, 0, 0, 0]
+    9.  LinkedListReversal    = Days: [0, 0, 0, 0, 0]
+
+GROUP 1 - 3 IS MOST IMPORTANT FOR JUNIOR ROLE
+
+
+GROUP 4 — Sorting-based & stack/heap
+    10. MergeIntervals        = Days: [0, 0, 0, 0, 0]
+    11. cyclic_sort            = Days: [0, 0, 0, 0, 0]
+    12. MonotonicStack        = Days: [0, 0, 0, 0, 0]
+    13. TopKElement           = Days: [0, 0, 0, 0, 0]
+
+GROUP 5 — Trees
+    14. TreeBFS               = Days: [0, 0, 0, 0, 0]
+    15. TreeDFS               = Days: [0, 0, 0, 0, 0]
+
+GROUP 6 — Graphs
+    16. GraphTraversal        = Days: [0, 0, 0, 0, 0]
+    17. GridTraversal         = Days: [0, 0, 0, 0, 0]
+    18. TopologicalSort       = Days: [0, 0, 0, 0, 0]
+
+GROUP 7 — Recursion-heavy (lower priority for junior)
+    19. BackTracking          = Days: [0, 0, 0, 0, 0]
+    20. DynamicProgramming1D  = Days: [0, 0, 0, 0, 0]
+    21. DynamicProgramming2D  = Days: [0, 0, 0, 0, 0]
+    22. Greedy                = Days: [0, 0, 0, 0, 0]
