@@ -211,6 +211,28 @@ public class TwoPointers {
 
         return sb.toString();
     }
+    
+    // Problem 5
+    // LeetCode: 2465. Number of distinct averages
+    public int distinctAverages(int[] nums) {
+        Arrays.sort(nums);
+        // R2PS DIT
+        int n = nums.length;
+        int left = 0;
+        int right = n - 1;
+        
+        HashSet<Double> set =
+            new HashSet<>();
+        while(left<right){
+            double avg = 0;
+         avg = (nums[left] + nums[right]) / 2.0;
+            set.add(avg);
+            left++;
+            right--;
+        }
+        return set.size();
+    }
+
 
     public static void main(String[] args) {
 
