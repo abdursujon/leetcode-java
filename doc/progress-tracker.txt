@@ -1,11 +1,11 @@
 ## 3 PROBLEM A DAY 5 DAYS EACH TOPIC
 GROUP 1
-    1.  Build HashMap         = Days: [0, 0, 0, 0, 0]
-    2.  Build LinkedList      = Days: [0, 0, 0, 0, 0]
+    1.  Build HashMap         = DONE
+    2.  Build LinkedList      = DONE
     3.  Hashing               = Days: [0, 0, 0, 0, 0]
 
 GROUP 2 — Array & string core (highest interview frequency)
-    4.  two_pointers           = Days: [1, 2, 0, 0, 0]
+    4.  two_pointers           = Days: [1, 2, 3, 0, 0]
     5.  SlidingWindow         = Days: [0, 0, 0, 0, 0]
     6.  PrefixSum             = Days: [0, 0, 0, 0, 0]
     7.  binary_search          = Days: [0, 0, 0, 0, 0]

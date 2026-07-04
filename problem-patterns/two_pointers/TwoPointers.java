@@ -2,6 +2,7 @@ package two_pointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -216,7 +217,7 @@ public class TwoPointers {
     // LeetCode: 2465. Number of distinct averages
     public int distinctAverages(int[] nums) {
         Arrays.sort(nums);
-        // R2PS DIT
+        // R2SP DIT
         int n = nums.length;
         int left = 0;
         int right = n - 1;
