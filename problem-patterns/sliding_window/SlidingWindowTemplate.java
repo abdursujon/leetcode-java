@@ -1,22 +1,25 @@
 package sliding_window;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
- * Sliding Window: a contiguous range [left, right] that expands and contracts. // ?
+ * Sliding Window: a contiguous range [left, right] that expands and shrinks.
  *
- * 1. findMaxSumOfFixedWindow(int[], int)           - fixed size k; right adds, left removes, window size never changes
- * 2. findLongestSubstringWithoutRepeat(String)     - variable size; grow right always, shrink left only on violation, track the MAX valid window
- * 3. findMinLengthSubarrayAtLeastTarget(int[], int)- variable size; grow right always, shrink left while still valid, track the MIN valid window
+ * 1. findMaxSumOfFixedWindow: fixed size k; right adds, left removes, window size never changes
+ * 2. findLongestSubstringWithoutRepeat: variable size; grow right always, shrink left only on violation, track the MAX valid window
+ * 3. findMinLengthSubarrayAtLeastTarget: variable size; grow right always, shrink left while still valid, track the MIN valid window
  */
 public class SlidingWindowTemplate {
 
-    // 1. findMaxSumOfFixedWindow(int[], int) — window size stays k; each step add nums[right], and once the window is full subtract nums[left] and advance left
     public static int findMaxSumOfFixedWindow(int[] nums, int windowSize){
+        if(nums.length < windowSize) return 0;
+
         int currentSum = 0;
-        int maxSum = Integer.MIN_VALUE; // ?
-        System.out.println(maxSum);
+        int maxSum = Integer.MIN_VALUE;
         int left = 0;
+
         for(int right = 0; right < nums.length; right++){
             currentSum += nums[right];
             if(right - left + 1 == windowSize){
@@ -25,12 +28,11 @@ public class SlidingWindowTemplate {
                 left++;
             }
         }
+
         return maxSum;
     }
 
 
-    // 2. findLongestSubstringWithoutRepeat(String) —
-    // grow right every step; while the new char breaks the "no repeat" rule, shrink from left; record the window size after it becomes valid
     public static int findLongestSubstringWithoutRepeat(String s){
         HashSet<Character> charsWindow = new HashSet<>();
         int left = 0;
@@ -47,8 +49,26 @@ public class SlidingWindowTemplate {
     }
 
 
-    // 3. findMinLengthSubarrayAtLeastTarget(int[], int)
-    // grow right every step; while the window already satisfies the rule, record its size then shrink from left to look for a smaller one
+    public static int findLongestSubstringWhileOneRepeatationAllowed(String s){
+        Map<Character, Integer> map = new HashMap<>();
+        int left = 0;
+        int longestLength = 0;
+        for(int right = 0; right < s.length(); right++){
+            map.put(s.charAt(right), map.getOrDefault(s.charAt(right), 0) + 1);
+
+            while(map.get(s.charAt(right)) > 2){
+                map.put(s.charAt(left), map.get(s.charAt(left)) - 1);
+                if(map.get(s.charAt(left)) == 0){
+                    map.remove(s.charAt(left));
+                }
+                left++;
+            }
+            longestLength = Math.max(longestLength, right - left + 1);
+        }
+        return longestLength;
+    }
+
+
     public static int findMinLengthSubarrayAtLeastTarget(int[] nums, int target){
         int currentSum = 0;
         int left = 0;
@@ -61,12 +81,14 @@ public class SlidingWindowTemplate {
                 left++;
             }
         }
+        // if no target found, because target is too large, or small, minLength still points to max integer value, there fore return 0, otherwise return minLength
         return minLength == Integer.MAX_VALUE ? 0 : minLength;
     }
 
     public static void main(String[] args){
         System.out.println(findMaxSumOfFixedWindow(new int[] {80, 11, 22, 11, 22, 88, 21, 33, 0}, 2));
         System.out.println(findLongestSubstringWithoutRepeat("ABCABCABCABCD"));
+        System.out.println( findLongestSubstringWhileOneRepeatationAllowed("ABCABCABCABCD") + "one repeat");
         System.out.println(findMinLengthSubarrayAtLeastTarget(new int[] {80, 11, 22, 11, 22, 88, 21, 33, 0}, 90));
     }
 
