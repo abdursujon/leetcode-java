@@ -112,6 +112,6 @@ public class HashingTemplate {
         System.out.println(groupSimilarElements(new String[]{"eat", "tea", "mum", "tan", "ant", "bat", "ate"}));
 
         System.out.println(longestConsecutive(new int[]{1, 6, 7, 88, 2, 3, 4, 5, 0, 100, 290}));
-        System.out.println(longestConsecutive(new int[]{88, 88, 88, 88}));
+        System.out.println(longestConsecutive(new int[]{88, 88, 88, 88 }));
     }
 }
