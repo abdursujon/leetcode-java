@@ -56,4 +56,12 @@ public class MyHashMap {
             }
         }
     }
+
+    public static void main(String[] args){
+        MyHashMap map = new MyHashMap();
+        map.put(1, 78);
+        System.out.println(map.get(1));
+        map.remove(1);
+        System.out.println(map.get(1));
+    }
 }
