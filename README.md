@@ -6,8 +6,8 @@ Each file isolates **one problem-solving pattern** so we can learn the patterns 
 Suggested order of learning since each topic builds on the ones above it. The patterns that will be included are listed below. 
 >Note: You can click any topic below to view the code directly (if the patterns are done).
 1.  Hashing (HashMap, HashSet) x
-2.  [Two Pointers](problem-patterns/two_pointers/TwoPointers.java) (array, string - usually sorted)
-3.  SlidingWindow (array, string + HashMap/HashSet)
+2.  [Two Pointers](problem-patterns/two_pointers/TwoPointers.java) (array, string - usually sorted) x
+3.  SlidingWindow (array, string + HashMap/HashSet) x
 4.  PrefixSum (array + HashMap)
 5.  BinarySearch (sorted array)
 6.  FastAndSlowPointers (linked list, array)
